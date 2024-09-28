@@ -1,5 +1,7 @@
 <?php
 
+use App\Filament\Pages\ServiceData;
+
 return [
 
     /*
@@ -85,5 +87,4 @@ return [
     */
 
     'livewire_loading_delay' => 'default',
-
 ];
