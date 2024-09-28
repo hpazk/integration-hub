@@ -30,8 +30,17 @@ class ServiceResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->defaultSort('created_at', 'desc')
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('category.name')
+                    ->label('Kategori')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('name')
+                    ->label('Nama Layanan')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('owner')
+                    ->label('Pemilik Layanan')
+                    ->searchable(),
             ])
             ->filters([
                 //
