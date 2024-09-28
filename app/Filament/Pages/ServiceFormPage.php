@@ -36,6 +36,7 @@ class ServiceFormPage extends BasePage implements HasForms
         return $form->schema([
             Forms\Components\TextInput::make('name')
                 ->label('Nama Layanan')
+                ->placeholder('Masukan Nama Layanan')
                 ->required(),
             Forms\Components\Select::make(name: 'category_id')
                 ->label('Kategori Layanan')
@@ -43,10 +44,12 @@ class ServiceFormPage extends BasePage implements HasForms
                 ->options(ServiceCategory::all()->pluck('name', 'id'))
                 ->required(),
             Forms\Components\TextInput::make(name: 'url')
-                ->label('Endpoint API')
+                ->label('URL Endpoint API')
+                ->placeholder('Masukan URL Endpoint API')
                 ->required(),
             Forms\Components\TextInput::make('owner')
                 ->label('Pemilik Layanan')
+                ->placeholder(placeholder: 'Masukan Nama Pemilik Layanan')
                 ->required(),
         ])
             ->statePath('data');
